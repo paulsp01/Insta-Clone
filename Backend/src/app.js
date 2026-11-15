@@ -29,8 +29,10 @@ connectToDB()
 app.use('/api/v1/auth',authRouter)
 app.use('/api/v1/posts', postRouter)
 app.use('/api/v1/user',userRouter)
-app.listen(5000,()=>{
-    console.log("app listening on running port 5000");
+const PORT = process.env.PORT || 5000
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
 })
 
 
